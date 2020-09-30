@@ -1,9 +1,8 @@
 from app import create_app
 from config import config
-from flask_jwt_extended import JWTManager
+from app import jwt
 
 app = create_app(config['development'])
-jwt = JWTManager(app)
 
 @app.shell_context_processor
 def make_shell_context():
