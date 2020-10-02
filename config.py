@@ -2,7 +2,8 @@
 class Config:
     SECRET_KEY = 'secret'
     JWT_SECRET_KEY = 'secret'
-
+    CORS_ORIGINS = '*'
+    CORS_SUPPORTS_CREDENTIALS = True
     @staticmethod
     def init_app(app):
        pass
