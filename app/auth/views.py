@@ -4,14 +4,14 @@ from . import auth
 
 @auth.route('/login/', methods=['POST'])
 def login():
-    username = request.json.get('username', None)
+    user_id = request.json.get('user_id', None)
     password = request.json.get('password', None)
 
-    if username != 'test' or password != 'test': 
-        return jsonify(msg="Bad username or password"), 401
+    if user_id != 'test' or password != 'test': 
+        return jsonify(msg="Bad user_id or password"), 401
 
-    access_token = create_access_token(identity=username)
-    refresh_token = create_refresh_token(identity=username)
+    access_token = create_access_token(identity=user_id)
+    refresh_token = create_refresh_token(identity=user_id)
     return jsonify(access_token=access_token, refresh_token=refresh_token)
 
 @auth.route('/refresh/', methods=['POST'])
