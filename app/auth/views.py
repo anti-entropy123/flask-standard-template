@@ -7,6 +7,7 @@ def login():
     user_id = request.json.get('user_id', None)
     password = request.json.get('password', None)
 
+    # 此处验证用户身份
     if user_id != 'test' or password != 'test': 
         return jsonify(msg="Bad user_id or password"), 401
 
@@ -15,6 +16,7 @@ def login():
     return jsonify(access_token=access_token, refresh_token=refresh_token)
 
 @auth.route('/refresh/', methods=['POST'])
+# 访问此接口需要携带有效的refresh_token
 @jwt_refresh_token_required
 def refresh():
     current_user = get_jwt_identity()

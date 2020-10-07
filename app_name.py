@@ -3,8 +3,10 @@ from config import config
 from app import jwt
 from app import db
 
+# 调用工程函数构建应用实例
 app = create_app(config['development'])
 
+# flask shell 构建上下文
 @app.shell_context_processor
 def make_shell_context():
     return {
