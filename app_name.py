@@ -17,7 +17,7 @@ def make_shell_context():
 if __name__ == "__main__":
     app.run(
         host='0.0.0.0',
-        port=1314,
+        port=8000,
         # 仅使用https时需要
         # ssl_context=('cert/server.crt', 'cert/server.key')
     )

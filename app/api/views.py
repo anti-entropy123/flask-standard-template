@@ -1,6 +1,5 @@
 from . import api
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from flask_jwt import current_identity
 from flask import jsonify
 from .. import models
 from ..utils import role_required
