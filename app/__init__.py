@@ -32,5 +32,8 @@ def create_app(config=None):
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    return app
+    from .ws import ws
+    ws.init_app(app)
+    
+    return app, ws
     
