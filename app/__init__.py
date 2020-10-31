@@ -13,6 +13,7 @@ def create_app(config=None):
     # 如果有配置对象传入, 则应用到实例中
     if config:
         app.config.from_object(config)
+        config.init_app(app)
 
     # 初始化 jwt
     jwt.init_app(app)

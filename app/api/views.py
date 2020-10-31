@@ -2,7 +2,7 @@ from . import api
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask import jsonify
 from .. import models
-from ..utils import role_required
+from ..auth import role_required
 
 # 设置端点url和被允许的method
 @api.route('/test/', methods=['GET'])
